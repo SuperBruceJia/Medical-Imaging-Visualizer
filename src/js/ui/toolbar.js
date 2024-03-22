@@ -167,20 +167,20 @@ papaya.ui.Toolbar.OVERLAY_IMAGE_MENU_DATA = {
 
 papaya.ui.Toolbar.BASE_IMAGE_MENU_DATA = {
     "items": [
-        {"label": "Show Header", "action": "ShowHeader"},
-        {"label": "Show Image Info", "action": "ImageInfo"},
+        // {"label": "Show Header", "action": "ShowHeader"},
+        // {"label": "Show Image Info", "action": "ImageInfo"},
         {"label": "DisplayRange", "action": "ChangeRange", "type": "displayrange", "method": "getRange"},
-            papaya.ui.Toolbar.OVERLAY_IMAGE_MENU_DATA.items[6],
-        {"label": "Rotation", "action": "Rotation", "items": [
-            {"label": "About X Axis", "action": "rotationX", "type": "range", "method": "getRotationX"},
-            {"label": "About Y Axis", "action": "rotationY", "type": "range", "method": "getRotationY"},
-            {"label": "About Z Axis", "action": "rotationZ", "type": "range", "method": "getRotationZ"},
-            {"label": "Reset Transform", "action": "ResetTransform"},
-            {"label": "Rotate About Center", "action": "Rotate About Center", "type": "radiobutton", "method": "isRotatingAbout"},
-            {"label": "Rotate About Origin", "action": "Rotate About Origin", "type": "radiobutton", "method": "isRotatingAbout"},
-            {"label": "Rotate About Crosshairs", "action": "Rotate About Crosshairs", "type": "radiobutton", "method": "isRotatingAbout"}
-        ]},
-        {"label": "Open in Mango", "action": "OpenInMango", "required" : "canOpenInMango"  }
+            // papaya.ui.Toolbar.OVERLAY_IMAGE_MENU_DATA.items[6],
+        // {"label": "Rotation", "action": "Rotation", "items": [
+        //     {"label": "About X Axis", "action": "rotationX", "type": "range", "method": "getRotationX"},
+        //     {"label": "About Y Axis", "action": "rotationY", "type": "range", "method": "getRotationY"},
+        //     {"label": "About Z Axis", "action": "rotationZ", "type": "range", "method": "getRotationZ"},
+        //     {"label": "Reset Transform", "action": "ResetTransform"},
+        //     {"label": "Rotate About Center", "action": "Rotate About Center", "type": "radiobutton", "method": "isRotatingAbout"},
+        //     {"label": "Rotate About Origin", "action": "Rotate About Origin", "type": "radiobutton", "method": "isRotatingAbout"},
+        //     {"label": "Rotate About Crosshairs", "action": "Rotate About Crosshairs", "type": "radiobutton", "method": "isRotatingAbout"}
+        // ]},
+        // {"label": "Open in Mango", "action": "OpenInMango", "required" : "canOpenInMango"  }
     ]
 };
 
