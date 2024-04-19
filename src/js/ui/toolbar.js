@@ -167,20 +167,20 @@ papaya.ui.Toolbar.OVERLAY_IMAGE_MENU_DATA = {
 
 papaya.ui.Toolbar.BASE_IMAGE_MENU_DATA = {
     "items": [
-        // {"label": "Show Header", "action": "ShowHeader"},
-        // {"label": "Show Image Info", "action": "ImageInfo"},
+        {"label": "Show Header", "action": "ShowHeader"},
+        {"label": "Show Image Info", "action": "ImageInfo"},
         {"label": "DisplayRange", "action": "ChangeRange", "type": "displayrange", "method": "getRange"},
-            // papaya.ui.Toolbar.OVERLAY_IMAGE_MENU_DATA.items[6],
-        // {"label": "Rotation", "action": "Rotation", "items": [
-        //     {"label": "About X Axis", "action": "rotationX", "type": "range", "method": "getRotationX"},
-        //     {"label": "About Y Axis", "action": "rotationY", "type": "range", "method": "getRotationY"},
-        //     {"label": "About Z Axis", "action": "rotationZ", "type": "range", "method": "getRotationZ"},
-        //     {"label": "Reset Transform", "action": "ResetTransform"},
-        //     {"label": "Rotate About Center", "action": "Rotate About Center", "type": "radiobutton", "method": "isRotatingAbout"},
-        //     {"label": "Rotate About Origin", "action": "Rotate About Origin", "type": "radiobutton", "method": "isRotatingAbout"},
-        //     {"label": "Rotate About Crosshairs", "action": "Rotate About Crosshairs", "type": "radiobutton", "method": "isRotatingAbout"}
-        // ]},
-        // {"label": "Open in Mango", "action": "OpenInMango", "required" : "canOpenInMango"  }
+            papaya.ui.Toolbar.OVERLAY_IMAGE_MENU_DATA.items[6],
+        {"label": "Rotation", "action": "Rotation", "items": [
+            {"label": "About X Axis", "action": "rotationX", "type": "range", "method": "getRotationX"},
+            {"label": "About Y Axis", "action": "rotationY", "type": "range", "method": "getRotationY"},
+            {"label": "About Z Axis", "action": "rotationZ", "type": "range", "method": "getRotationZ"},
+            {"label": "Reset Transform", "action": "ResetTransform"},
+            {"label": "Rotate About Center", "action": "Rotate About Center", "type": "radiobutton", "method": "isRotatingAbout"},
+            {"label": "Rotate About Origin", "action": "Rotate About Origin", "type": "radiobutton", "method": "isRotatingAbout"},
+            {"label": "Rotate About Crosshairs", "action": "Rotate About Crosshairs", "type": "radiobutton", "method": "isRotatingAbout"}
+        ]},
+        {"label": "Open in Mango", "action": "OpenInMango", "required" : "canOpenInMango"  }
     ]
 };
 
@@ -332,28 +332,28 @@ papaya.ui.Toolbar.prototype.buildToolbar = function () {
     this.container.toolbarHtml.find("." + PAPAYA_MENU_LABEL_CSS).remove();
     this.container.toolbarHtml.find("." + PAPAYA_TITLEBAR_CSS).remove();
 
-    // if (this.container.kioskMode) {
-    //     for (ctr = 0; ctr < papaya.ui.Toolbar.MENU_DATA_KIOSK.menus.length; ctr += 1) {
-    //         this.buildMenu(papaya.ui.Toolbar.MENU_DATA_KIOSK.menus[ctr], null, this.viewer, null);
-    //     }
-    // } else {
-    //     if ((this.container.viewer.screenVolumes.length > 0) && this.container.viewer.screenVolumes[0].rgb) {
-    //         papaya.ui.Toolbar.MENU_DATA.menus[0] = papaya.ui.Toolbar.RGB_FILE_MENU_DATA;
-    //     } else {
-    //         if (this.container.noNewFiles) {
-    //             papaya.ui.Toolbar.MENU_DATA.menus[0] = papaya.ui.Toolbar.RGB_FILE_MENU_DATA;
-    //         } else {
-    //             papaya.ui.Toolbar.MENU_DATA.menus[0] = papaya.ui.Toolbar.FILE_MENU_DATA;
-    //         }
-    //         this.buildOpenMenuItems(papaya.ui.Toolbar.MENU_DATA);
-    //     }
-    //
-    //     for (ctr = 0; ctr < papaya.ui.Toolbar.MENU_DATA.menus.length; ctr += 1) {
-    //         this.buildMenu(papaya.ui.Toolbar.MENU_DATA.menus[ctr], null, this.viewer, null);
-    //     }
-    //
-    //     this.buildAtlasMenu();
-    // }
+    if (this.container.kioskMode) {
+        for (ctr = 0; ctr < papaya.ui.Toolbar.MENU_DATA_KIOSK.menus.length; ctr += 1) {
+            this.buildMenu(papaya.ui.Toolbar.MENU_DATA_KIOSK.menus[ctr], null, this.viewer, null);
+        }
+    } else {
+        if ((this.container.viewer.screenVolumes.length > 0) && this.container.viewer.screenVolumes[0].rgb) {
+            papaya.ui.Toolbar.MENU_DATA.menus[0] = papaya.ui.Toolbar.RGB_FILE_MENU_DATA;
+        } else {
+            if (this.container.noNewFiles) {
+                papaya.ui.Toolbar.MENU_DATA.menus[0] = papaya.ui.Toolbar.RGB_FILE_MENU_DATA;
+            } else {
+                papaya.ui.Toolbar.MENU_DATA.menus[0] = papaya.ui.Toolbar.FILE_MENU_DATA;
+            }
+            this.buildOpenMenuItems(papaya.ui.Toolbar.MENU_DATA);
+        }
+
+        for (ctr = 0; ctr < papaya.ui.Toolbar.MENU_DATA.menus.length; ctr += 1) {
+            this.buildMenu(papaya.ui.Toolbar.MENU_DATA.menus[ctr], null, this.viewer, null);
+        }
+
+        this.buildAtlasMenu();
+    }
 
     this.buildColorMenuItems();
 

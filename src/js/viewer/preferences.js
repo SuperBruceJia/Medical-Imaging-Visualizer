@@ -37,7 +37,7 @@ papaya.viewer.Preferences.DEFAULT_SHOW_ORIENTATION = "Yes";
 papaya.viewer.Preferences.DEFAULT_SCROLL = "Increment Slice";
 papaya.viewer.Preferences.DEFAULT_SMOOTH_DISPLAY = "Yes";
 papaya.viewer.Preferences.DEFAULT_RADIOLOGICAL = "Yes";
-papaya.viewer.Preferences.DEFAULT_SHOW_RULER = "No";
+papaya.viewer.Preferences.DEFAULT_SHOW_RULER = "Yes";
 papaya.viewer.Preferences.DEFAULT_SURFACE_BACKGROUND_COLOR = "Gray";
 papaya.viewer.Preferences.DEFAULT_SHOW_SURFACE_PLANES = "Yes";
 
